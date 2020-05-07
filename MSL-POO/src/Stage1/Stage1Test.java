@@ -8,7 +8,7 @@ public class Stage1Test {
 
 	public static void main(String[] args) throws Exception {
 		Locale.setDefault(Locale.US);  // to read number in US format, like 1.5 (not like 1,5)
-	    Scanner in = new Scanner(new File(arg[0]));
+	    Scanner in = new Scanner(new File(args[0]));
 	    float time = 0.0f;
 	    Joystick l_Joy = new Joystick();
 	    Joystick r_Joy = new Joystick();
@@ -17,6 +17,7 @@ public class Stage1Test {
 	         System.out.println(/* to be coded */);
 	         time+=0.1;
 
-	}
+	    }
 
+	}
 }
