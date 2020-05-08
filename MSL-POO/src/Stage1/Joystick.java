@@ -12,10 +12,10 @@ public class Joystick {
 	    //??
 	   } 
 	   public float getVerPos() {
-	     //??
+	     return vf;
 	   }
 	   public float getHorPos() {
-	      // ??
+	      return hf; 
 	   }
 	   public String toString() {
 	      return hf+","+vf;
