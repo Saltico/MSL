@@ -6,10 +6,10 @@ public class Joystick {
 	      hf=0.0f;
 	   }
 	   public void setVerPos(float f){
-	   //???
+		this.vf = f;
 	   }
 	   public void setHorPos(float f){
-	    //??
+	    this.hf = f;
 	   } 
 	   public float getVerPos() {
 	     return vf;
