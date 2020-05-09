@@ -12,7 +12,8 @@ public class Operator {
 	   public boolean takeAction(float time){
 	      float f;
 	      if (time > t) {
-	        // to be coded.
+			// to be coded.
+			//imprimir los datos de cada linea
 	       }
 	      return true;
 	   }
