@@ -7,7 +7,7 @@ public class Joystick {
 	   }
 	   public void setVerPos(float f){
 		this.vf = f;
-		hola
+		//hola parece que no funciona
 	   }
 	   public void setHorPos(float f){
 		this.hf = f;
