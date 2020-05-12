@@ -8,12 +8,17 @@ public class Operator {
 	      r_Joystick = r_Joy;
 	      inFile.nextLine(); // skip description line
 	      t = inFile.nextFloat();
+	      
 	   }
 	   public boolean takeAction(float time){
 	      float f;
 	      if (time > t) {
-			// to be coded.
-			//imprimir los datos de cada linea
+	    	  while(inFile.hasNextLine()) {
+	    		  l_Joystick.setVerPos(1);
+	    		  l_Joystick.setHorPos(1);
+	    		  r_Joystick.setVerPos(1);
+	    		  r_Joystick.setHorPos(1);
+	    	  }
 	       }
 	      return true;
 	   }

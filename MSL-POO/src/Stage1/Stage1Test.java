@@ -14,10 +14,11 @@ public class Stage1Test {
 	    Joystick r_Joy = new Joystick();
 	    Operator operator = new Operator(in, l_Joy, r_Joy);
 	    while(operator.takeAction(time)) {
-	         System.out.println(/* to be coded */);
+	         System.out.println("\n" + time );
 	         time+=0.1;
 
 	    }
+	    in.close();
 
 	}
 }
