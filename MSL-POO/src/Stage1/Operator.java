@@ -10,16 +10,20 @@ public class Operator {
 	      t = inFile.nextFloat();
 	      
 	   }
-	   public boolean takeAction(float time){
+	   public boolean takeAction(float time){	
 	      float f;
-	      if (time > t) {
-	    	  while(inFile.hasNextLine()) {
-	    		  l_Joystick.setVerPos(1);
-	    		  l_Joystick.setHorPos(1);
-	    		  r_Joystick.setVerPos(1);
-	    		  r_Joystick.setHorPos(1);
-	    	  }
-	       }
+	      while(inFile.hasNextLine()) {		   
+	         if (time > t) {
+	    	    String line = inFile.nextLine(); //creo que hay que usar scanner de nuevo
+		    String[] data = line.split("  ");
+		    t = data[0] 	 
+	    	    l_Joystick.setVerPos(data[1]); //hay que pasarlos a int?
+	    	    l_Joystick.setHorPos(data[2]);
+	    	    r_Joystick.setVerPos(data[3]);
+	    	    r_Joystick.setHorPos(data[4]);
+	    	 }
+	      }
+	      inFile.close(); 
 	      return true;
 	   }
 	   private float t;
