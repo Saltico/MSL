@@ -16,10 +16,10 @@ public class Operator {
 	    	  	String line = inFile.nextLine(); //creo que hay que usar scanner de nuevo
 	    	  	String[] data = line.split("  ");
 		    	t = Integer.parseInt(data[0]);// o ya esta definida arriba? 	 
-	    	    l_Joystick.setVerPos(Integer.parseInt(data[1])); //Integer.parseInt o solo parseInt?
-	    	    l_Joystick.setHorPos(Integer.parseInt(data[2]));
-	    	    r_Joystick.setVerPos(Integer.parseInt(data[3]));
-	    	    r_Joystick.setHorPos(Integer.parseInt(data[4]));
+	    	    l_Joystick.setVerPos(Float.parseFloat(data[1])); //Integer.parseInt o solo parseInt?
+	    	    l_Joystick.setHorPos(Float.parseFloat(data[2]));
+	    	    r_Joystick.setVerPos(Float.parseFloat(data[3]));
+	    	    r_Joystick.setHorPos(Float.parseFloat(data[4]));
 	    	 }
 	      return true;
 	   }
