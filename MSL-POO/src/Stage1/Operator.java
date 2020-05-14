@@ -12,18 +12,18 @@ public class Operator {
 	   }
 	   public boolean takeAction(float time){	
 	      float f;
-	      while(inFile.hasNextLine()) {		   
-	         if (time > t) {
+	      while(inFile.hasNextLine()) {	//deberia tener while?????? porque stage 1 tiene while y ahi se imprime
+	         if (time > t) {		//o no????????????????????????
 	    	    String line = inFile.nextLine(); //creo que hay que usar scanner de nuevo
 		    String[] data = line.split("  ");
-		    t = data[0] 	 
-	    	    l_Joystick.setVerPos(data[1]); //hay que pasarlos a int?
-	    	    l_Joystick.setHorPos(data[2]);
-	    	    r_Joystick.setVerPos(data[3]);
-	    	    r_Joystick.setHorPos(data[4]);
+		    t = data[0]// o ya esta definida arriba? 	 
+	    	    l_Joystick.setVerPos(Integer.parseInt(data[1])); //Integer.parseInt o solo parseInt?
+	    	    l_Joystick.setHorPos(Integer.parseInt(data[2]));
+	    	    r_Joystick.setVerPos(Integer.parseInt(data[3]));
+	    	    r_Joystick.setHorPos(Integer.parseInt(data[4]));
 	    	 }
 	      }
-	      inFile.close(); 
+	      inFile.close(); //se hará el close aqui o solo en el main
 	      return true;
 	   }
 	   private float t;
