@@ -1,5 +1,8 @@
-package Stage1;
+package Stage2;
+
 import java.util.Scanner;
+
+import Stage1.Joystick;
 
 public class Operator {
 	public Operator (Scanner in, Joystick l_Joy, Joystick r_Joy){
@@ -11,10 +14,10 @@ public class Operator {
 	      
 	   }
 	   public boolean takeAction(float time){	
-	      //float f;
+	      float f;
 	      if (time > t) {		//o no????????????????????????
-	    	  	String line = inFile.nextLine(); //creo que hay que usar scanner de nuevo
-	    	  	String[] data = line.split("  ");
+	    	String line = inFile.nextLine(); //creo que hay que usar scanner de nuevo
+		    String[] data = line.split("  ");
 		    	t = Integer.parseInt(data[0]);// o ya esta definida arriba? 	 
 	    	    l_Joystick.setVerPos(Integer.parseInt(data[1])); //Integer.parseInt o solo parseInt?
 	    	    l_Joystick.setHorPos(Integer.parseInt(data[2]));
@@ -27,3 +30,4 @@ public class Operator {
 	   private Scanner inFile;
 	   private Joystick l_Joystick, r_Joystick;
 }
+
