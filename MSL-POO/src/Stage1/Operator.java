@@ -8,20 +8,39 @@ public class Operator {
 	      r_Joystick = r_Joy;
 	      inFile.nextLine(); // skip description line
 	      t = inFile.nextFloat();
-	      
+
 	   }
-	   public boolean takeAction(float time){	
-	      //float f;
-	      if (time > t) {		//o no????????????????????????
-	    	  	String line = inFile.nextLine(); //creo que hay que usar scanner de nuevo
-	    	  	String[] data = line.split("  ");
-		    	t = Integer.parseInt(data[0]);// o ya esta definida arriba? 	 
-	    	    l_Joystick.setVerPos(Float.parseFloat(data[1])); //Integer.parseInt o solo parseInt?
-	    	    l_Joystick.setHorPos(Float.parseFloat(data[2]));
-	    	    r_Joystick.setVerPos(Float.parseFloat(data[3]));
-	    	    r_Joystick.setHorPos(Float.parseFloat(data[4]));
-	    	 }
-	      return true;
+	   public boolean takeAction(float time){
+		 	float f;
+			if(time == 0){
+				f = inFile.nextFloat();
+				l_Joystick.setHorPos(f);
+				f = inFile.nextFloat();
+	    	l_Joystick.setVerPos(f);
+				f = inFile.nextFloat();
+	    	r_Joystick.setHorPos(f);
+				f = inFile.nextFloat();
+	    	r_Joystick.setVerPos(f);
+				t = inFile.nextFloat();
+			}
+	   	else if(time >= t) {
+				f = inFile.nextFloat();
+				l_Joystick.setHorPos(f);
+				f = inFile.nextFloat();
+	    	l_Joystick.setVerPos(f);
+				f = inFile.nextFloat();
+	    	r_Joystick.setHorPos(f);
+				f = inFile.nextFloat();
+	    	r_Joystick.setVerPos(f);
+				if(inFile.hasNextFloat()){
+					t=inFile.nextFloat();
+				}
+				/*else{
+					return false;
+				}*/
+			}
+
+	    return true;
 	   }
 	   private float t;
 	   private Scanner inFile;
