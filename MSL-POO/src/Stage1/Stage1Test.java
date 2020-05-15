@@ -14,8 +14,8 @@ public class Stage1Test {
 	    Joystick r_Joy = new Joystick();
 	    Operator operator = new Operator(in, l_Joy, r_Joy);
 	    while(operator.takeAction(time)) {
-	         System.out.println(time + l_Joy.toString() + r_Joy.toString() + "\n"  ); //tobecoded Aca deberiamos imprimir tiempo,   jih,   jiv,   jdh,  jdv
-	         time+=0.1;
+	         System.out.println(((Math.round(time*10))/10.0) +" "+ l_Joy.toString() +"  "+ r_Joy.toString() + "\n"  );
+		 time+=0.1;
 
 	    }
 	    in.close();
