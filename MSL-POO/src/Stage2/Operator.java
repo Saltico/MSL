@@ -5,10 +5,9 @@ import java.util.Scanner;
 import Stage1.Joystick;
 
 public class Operator {
-	public Operator (Scanner in, Joystick l_Joy, Joystick r_Joy){
+	public Operator (Scanner in, SkyController sky){
 	      inFile = in;
-	      l_Joystick = l_Joy;
-	      r_Joystick = r_Joy;
+	      skyC = sky;
 	      inFile.nextLine(); // skip description line
 	      t = inFile.nextFloat();
 	      
