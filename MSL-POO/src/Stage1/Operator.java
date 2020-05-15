@@ -1,4 +1,3 @@
-package Stage1;
 import java.util.Scanner;
 
 public class Operator {
@@ -23,26 +22,28 @@ public class Operator {
 	    	r_Joystick.setVerPos(f);
 				t = inFile.nextFloat();
 			}
-	   	else if(time >= t) {
-				f = inFile.nextFloat();
-				l_Joystick.setHorPos(f);
-				f = inFile.nextFloat();
-	    	l_Joystick.setVerPos(f);
-				f = inFile.nextFloat();
-	    	r_Joystick.setHorPos(f);
-				f = inFile.nextFloat();
-	    	r_Joystick.setVerPos(f);
+	   	else if(((Math.round(time*10))/10.0) >= t) {
 				if(inFile.hasNextFloat()){
-					t=inFile.nextFloat();
-				}
-				/*else{
-					return false;
-				}*/
+					f = inFile.nextFloat();
+					l_Joystick.setHorPos(f);
+					f = inFile.nextFloat();
+	    		l_Joystick.setVerPos(f);
+					f = inFile.nextFloat();
+	    		r_Joystick.setHorPos(f);
+					f = inFile.nextFloat();
+	    		r_Joystick.setVerPos(f);
+					if(inFile.hasNextFloat()){
+						t=inFile.nextFloat();
+					}
+	 	 	}
+			else{
+				return false;
 			}
+	 	}
+	 return true;
+ 	}
+	  private float t;
+	  private Scanner inFile;
+	  private Joystick l_Joystick, r_Joystick;
 
-	    return true;
-	   }
-	   private float t;
-	   private Scanner inFile;
-	   private Joystick l_Joystick, r_Joystick;
 }
