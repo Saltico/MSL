@@ -1,4 +1,3 @@
-package Stage2;
 
 public class SkyController {
 	   public SkyController (Drone drone) {
@@ -26,8 +25,8 @@ public class SkyController {
 		float percentage = Math.abs(lStick.getHor());
 		float forwPer = Math.abs(rStick.getVer());
 		float sidePer = Math.abs(rStick.getHor());
-		drone.setRotationSpeed(percentage);
-      		drone.setFlySpeed(verPer,forwPer,sidePer);
+		this.drone.setRotationSpeed(percentage);
+      		this.drone.setFlySpeed(verPer,forwPer,sidePer);
 	   }
 	   private Drone drone;
 	   private Joystick lStick, rStick;
