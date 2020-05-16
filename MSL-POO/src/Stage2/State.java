@@ -1,4 +1,3 @@
-package Stage2;
 
 public enum State {  // We have not studied enum type. It enables for
 	   TAKE_OFF,      // a variable to be set of predefined constants.
