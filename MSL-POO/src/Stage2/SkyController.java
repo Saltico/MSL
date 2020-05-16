@@ -20,12 +20,12 @@ public class SkyController {
       		}
    	   }
 	   public void takeAction(float time) {
-	      // to be coded
-		//
 		float verPer = (Math.abs(lStick.getVer()))*100;
 		float percentage = Math.abs(lStick.getHor())*100;
 		float forwPer = Math.abs(rStick.getVer())*100;
 		float sidePer = Math.abs(rStick.getHor())*100;
+		drone.setRotationSpeed(percentage);
+      		drone.setFlySpeed(verPer,forwPer,sidePer);
 	   }
 	   private Drone drone;
 	   private Joystick lStick, rStick;
