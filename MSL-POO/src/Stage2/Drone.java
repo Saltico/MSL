@@ -24,9 +24,13 @@ public class Drone {
 	   }
 	   public void setRotationSpeed(float percentage) {
 	      // to be coded
+		rSpeed= percentage*MAX_R_SPEED;
 	   }
 	   public void setFlySpeed(float verPer, float forwPer, float sidePer) {
 	      // to be coded
+		sSpeed = sidePer*MAX_S_SPEED;
+		vSpeed = verPer*MAX_V_SPEED;
+		fSpeed = forwPer*MAX_F_SPEED;
 	   }
 	   public float getHeight() {
 	      return h;
