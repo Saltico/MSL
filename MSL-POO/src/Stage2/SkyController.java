@@ -13,10 +13,10 @@ public class SkyController {
 	   }
 	   public void pushTakeOff_Land () {
       	   	if(dron.getHeight == 0){	//Cuando la altura sea 0 y se inicia el takeoff significa que empezará su movimiento.
-        		this.dron.takeOff();
+        		this.drone.takeOff();
       	   	}
       		else{
-        		this.dron.land();		//La altura es distinta a 0 y le indica que debe comenzar el aterrizaje
+        		this.drone.land();		//La altura es distinta a 0 y le indica que debe comenzar el aterrizaje
       		}
    	   }
 	   public void takeAction(float time) {
