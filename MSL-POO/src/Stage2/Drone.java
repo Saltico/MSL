@@ -2,7 +2,11 @@ package Stage2;
 
 public class Drone {
 	   public Drone () {
-	      // to be coded
+	      state = State.LANDED;
+      	      x = 0;
+      	      y = 0;
+      	      h = 0;
+              direction = (float)(Math.PI/2);  //apuntando el eje y como adelante
 	   }
 	   static {
 	      MAX_F_SPEED = MAX_S_SPEED = 5; // [m/s]
