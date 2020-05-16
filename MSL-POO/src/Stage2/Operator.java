@@ -1,32 +1,49 @@
-package Stage2;
-
 import java.util.Scanner;
 
-import Stage1.Joystick;
-
 public class Operator {
-	public Operator (Scanner in, SkyController sky){
+	public Operator (Scanner in, Joystick l_Joy, Joystick r_Joy){
 	      inFile = in;
-	      skyC = sky;
+	      l_Joystick = l_Joy;
+	      r_Joystick = r_Joy;
 	      inFile.nextLine(); // skip description line
 	      t = inFile.nextFloat();
-	      
-	   }
-	   public boolean takeAction(float time){	
-	      float f;
-	      if (time > t) {		//o no????????????????????????
-	    	String line = inFile.nextLine(); //creo que hay que usar scanner de nuevo
-		    String[] data = line.split("  ");
-		    	t = Integer.parseInt(data[0]);// o ya esta definida arriba? 	 
-	    	    l_Joystick.setVerPos(Integer.parseInt(data[1])); //Integer.parseInt o solo parseInt?
-	    	    l_Joystick.setHorPos(Integer.parseInt(data[2]));
-	    	    r_Joystick.setVerPos(Integer.parseInt(data[3]));
-	    	    r_Joystick.setHorPos(Integer.parseInt(data[4]));
-	    	 }
-	      return true;
-	   }
-	   private float t;
-	   private Scanner inFile;
-	   private Joystick l_Joystick, r_Joystick;
-}
 
+	   }
+	   public boolean takeAction(float time){
+		 	float f;
+			if(time == 0){
+				f = inFile.nextFloat();
+				l_Joystick.setHorPos(f);
+				f = inFile.nextFloat();
+	    	l_Joystick.setVerPos(f);
+				f = inFile.nextFloat();
+	    	r_Joystick.setHorPos(f);
+				f = inFile.nextFloat();
+	    	r_Joystick.setVerPos(f);
+				t = inFile.nextFloat();
+			}
+	   	else if(((Math.round(time*10))/10.0) >= t) {
+				if(inFile.hasNextFloat()){
+					f = inFile.nextFloat();
+					l_Joystick.setHorPos(f);
+					f = inFile.nextFloat();
+	    		l_Joystick.setVerPos(f);
+					f = inFile.nextFloat();
+	    		r_Joystick.setHorPos(f);
+					f = inFile.nextFloat();
+	    		r_Joystick.setVerPos(f);
+					if(inFile.hasNextFloat()){
+						t=inFile.nextFloat();
+					}
+	 	 	}
+			else{
+				return false;
+			}
+	 	}
+	 return true;
+ 	}
+	  private float t;
+	  private Scanner inFile;
+	  private Joystick l_Joystick, r_Joystick;
+
+}
