@@ -3,7 +3,9 @@ package Stage2;
 public class SkyController {
 	   public SkyController (Drone drone) {
 	      this.drone = drone;		//Hace referencia al objeto actual de la clase
-	      // to be coded
+	      this.button = this.drone.getState();
+      	      lStick = new Joystick();
+              rStick = new Joystick();
 	   }
 	   public Joystick getLeftStick(){
 	      return lStick;
@@ -20,10 +22,10 @@ public class SkyController {
       		}
    	   }
 	   public void takeAction(float time) {
-		float verPer = (Math.abs(lStick.getVer()))*100;
-		float percentage = Math.abs(lStick.getHor())*100;
-		float forwPer = Math.abs(rStick.getVer())*100;
-		float sidePer = Math.abs(rStick.getHor())*100;
+		float verPer = (Math.abs(lStick.getVer()));
+		float percentage = Math.abs(lStick.getHor());
+		float forwPer = Math.abs(rStick.getVer());
+		float sidePer = Math.abs(rStick.getHor());
 		drone.setRotationSpeed(percentage);
       		drone.setFlySpeed(verPer,forwPer,sidePer);
 	   }
