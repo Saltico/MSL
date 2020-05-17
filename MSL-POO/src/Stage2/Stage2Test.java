@@ -12,6 +12,11 @@ public class Stage2Test  {
       SkyController skyController = new SkyController(drone);
       Operator operator = new Operator(in, skyController);
       skyController.pushTakeOff_Land(); // to take-off
+      while(drone.getHeight() < 1.0){
+        drone.takeAction(time);
+        System.out.println(((Math.round(time*10))/10.0)+ ",\t"+drone);
+        time+=0.1;
+      }
       while(operator.takeAction(time)) {
          skyController.takeAction(time);
          drone.takeAction(time);
