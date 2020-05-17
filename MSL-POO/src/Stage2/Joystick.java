@@ -1,5 +1,3 @@
-package Stage2;
-
 public class Joystick {
 	public Joystick () {
 	      vf=0.0f;
@@ -10,12 +8,12 @@ public class Joystick {
 	   }
 	   public void setHorPos(float f){
 		this.hf = f;
-	   } 
+	   }
 	   public float getVerPos() {
 	     return vf;
 	   }
 	   public float getHorPos() {
-	      return hf; 
+	      return hf;
 	   }
 	   public String toString() {
 	      return hf+","+vf;
