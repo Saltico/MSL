@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 public class Operator {
 	public Operator (Scanner in, SkyController skyController){
 	      inFile = in;
@@ -13,9 +11,10 @@ public class Operator {
 	   }
 	   public boolean takeAction(float time){
 		 	float f;
-			if(time == 0){
+			if(time == 0.0){
 				f = inFile.nextFloat();
 				l_Joystick.setHorPos(f);
+
 				f = inFile.nextFloat();
 	    	l_Joystick.setVerPos(f);
 				f = inFile.nextFloat();
@@ -36,6 +35,7 @@ public class Operator {
 	    		r_Joystick.setVerPos(f);
 					if(inFile.hasNextFloat()){
 						t=inFile.nextFloat();
+						t+=1.0;
 					}
 	 	 	}
 			else{
