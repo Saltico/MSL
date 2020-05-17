@@ -13,7 +13,7 @@ public class SkyController {
 	      return rStick;
 	   }
 	   public void pushTakeOff_Land () {
-      	   	if(dron.getHeight == 0){	//Cuando la altura sea 0 y se inicia el takeoff significa que empezará su movimiento.
+      	   	if(this.drone.getHeight() == 0){	//Cuando la altura sea 0 y se inicia el takeoff significa que empezará su movimiento.
         		this.drone.takeOff();
       	   	}
       		else{
@@ -21,12 +21,12 @@ public class SkyController {
       		}
    	   }
 	   public void takeAction(float time) {
-		float verPer = (Math.abs(lStick.getVer()));
-		float percentage = Math.abs(lStick.getHor());
-		float forwPer = Math.abs(rStick.getVer());
-		float sidePer = Math.abs(rStick.getHor());
-		this.drone.setRotationSpeed(percentage);
-      		this.drone.setFlySpeed(verPer,forwPer,sidePer);
+			 float verPer = (Math.abs(lStick.getVerPos()));
+			 float percentage = Math.abs(lStick.getHorPos());
+			 float forwPer = Math.abs(rStick.getVerPos());
+			 float sidePer = Math.abs(rStick.getHorPos());
+			 this.drone.setRotationSpeed(percentage);
+       this.drone.setFlySpeed(verPer,forwPer,sidePer);
 	   }
 	   private Drone drone;
 	   private Joystick lStick, rStick;
