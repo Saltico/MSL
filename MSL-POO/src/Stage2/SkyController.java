@@ -1,4 +1,3 @@
-
 public class SkyController {
    public SkyController (Drone drone) {
       this.drone = drone;
