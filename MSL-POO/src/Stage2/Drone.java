@@ -3,10 +3,10 @@ package Stage2;
 public class Drone {
    public Drone () {
       state = State.LANDED;
-      x = 0;
-      y = 0;
-      h = 0;
-      direction = (float)(Math.PI/2);  //apuntando el eje y como adelante
+      x = 0.0f;
+      y = 0.0f;
+      h = 0.0f;
+      direction = 0.0f;  //apuntando el eje y como adelante
    }
    static {
       MAX_F_SPEED = MAX_S_SPEED = 5; // [m/s]
@@ -25,12 +25,16 @@ public class Drone {
           state = State.FLYING;
           break;
       case FLYING:
-          while(h>0.0){
-            direction = direction + (rSpeed*delta_t);
-            h = h + (vSpeed*delta_t);
-            y = y + (fSpeed*delta_t);
-            x = x + (sSpeed*delta_t);
-          }
+          if(h>0.0){
+			    System.out.println("estoy o no estoy");
+			    direction = ((direction + (rSpeed*0.10)));
+		            System.out.println("soy el angulo:" + direction);
+			    h = ((h + (vSpeed*0.10)));
+			    x = ((((sSpeed*0.10)*Math.cos(direction))-((fSpeed*0.10)*Math.sin(direction))));
+			    System.out.println("soy el x:" + x);
+			    y = ((((fSpeed*0.10)*Math.cos(direction))-((sSpeed*0.10)*Math.sin(direction))));
+			    System.out.println("Soy el y:" +y);	
+		     }
           break;
       case LANDING: //drone moves only downwards in this stage
           while(h>0.0){
